@@ -15,10 +15,11 @@ massive(CONNECTION_STRING)
 
 app.use(express.json());
 
-app.get('./api/products', products_controller.getAll);
-app.get('./api/products/:id', products_controller.getOne);
-
-
+app.get('/api/products', products_controller.getAll);
+app.get('/api/products/:id', products_controller.getOne);
+app.put('/api/products/:id', products_controller.update);
+app.post('/api/products', products_controller.create);
+app.delete('/api/products/:id', products_controller.delete);
 
 
 app.listen(SERVER_PORT, () => {
